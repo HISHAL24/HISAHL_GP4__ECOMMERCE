@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Catalogue Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>📚 Catalogue Management System</h1>
+
+    <div class="menu">
+      <button onclick="showSection('create')">➕ Create Catalogue</button>
+      <button onclick="showSection('getById')">🔍 Get Catalogue by ID</button>
+      <button onclick="showSection('update')">✏️ Update Catalogue by ID</button>
+      <button onclick="showSection('delete')">🗑️ Delete Catalogue by ID</button>
+      <button onclick="getAllCatalogues()">📋 Get All Catalogues</button>
+      <button onclick="exitApp()">🚪 Exit</button>
+    </div>
+
+    <div class="section" id="create">
+      <h2>Create New Catalogue</h2>
+      <input type="text" id="c_name" placeholder="Name">
+      <input type="text" id="c_desc" placeholder="Description">
+      <input type="date" id="c_from">
+      <input type="date" id="c_to">
+      <select id="c_status">
+        <option value="">Select Status</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+      <button class="submit" onclick="createCatalogue()">Submit</button>
+    </div>
+
+    <div class="section" id="getById">
+      <h2>Get Catalogue by ID</h2>
+      <input type="number" id="get_id" placeholder="Enter ID">
+      <button class="submit" onclick="getCatalogueById()">Fetch</button>
+      <div id="get_result" class="card-list"></div>
+
+    </div>
+
+    <div class="section" id="update">
+      <h2>Update Catalogue</h2>
+      <input type="number" id="u_id" placeholder="ID">
+      <input type="text" id="u_name" placeholder="Name">
+      <input type="text" id="u_desc" placeholder="Description">
+      <input type="date" id="u_from">
+      <input type="date" id="u_to">
+      <select id="u_status">
+        <option value="">Select Status</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+      <button class="submit" onclick="updateCatalogue()">Update</button>
+    </div>
+
+    <div class="section" id="delete">
+      <h2>Delete Catalogue</h2>
+      <input type="number" id="del_id" placeholder="ID">
+      <button class="submit delete" onclick="deleteCatalogue()">Delete</button>
+    </div>
+
+    <div id="all_catalogues" class="section">
+      <h2>All Catalogues</h2>
+      <div id="all_data" class="card-list"></div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
